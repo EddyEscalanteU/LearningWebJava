@@ -1,10 +1,12 @@
 package beans.backing;
+
 /*
     Created by IntelliJ IDEA.
     User: @EddyEscalanteU
     Date: 05/01/2021
 */
 
+import beans.helper.ColoniaHelper;
 import beans.helper.FacesContextHelper;
 import beans.model.Candidato;
 import javax.inject.Named;
@@ -24,11 +26,13 @@ import org.apache.logging.log4j.Logger;
 public class VacanteForm {
 
     Logger log = LogManager.getRootLogger();
-
     private boolean comentarioEnviado = false;
 
     @Inject
     private Candidato candidato;
+
+    @Inject
+    private ColoniaHelper coloniaHelper;
 
     public VacanteForm() {
         log.info("Creando objeto VacanteForm");
@@ -65,22 +69,19 @@ public class VacanteForm {
     public void codigoPostalListener(ValueChangeEvent valueChangeEvent) {
         FacesContext facesContext = FacesContext.getCurrentInstance();
         UIViewRoot uiViewRoot = facesContext.getViewRoot();
-        String newCodigoPostal = (String) valueChangeEvent.getNewValue();
-        if ("1010".equals(newCodigoPostal)) {
-            log.info("Modificamos los valores de colonia y ciudad dinamicamente con ValueChangeListener");
-            //Utilizamos el nombre del form de index.xhtml para encontrar el componente
-            UIInput coloniaInputText = (UIInput) uiViewRoot.findComponent("vacanteForm:coloniaId");
-            Long coloniaId = 1L;
-            coloniaInputText.setValue(coloniaId);
-            coloniaInputText.setSubmittedValue(Long.toString(coloniaId));
-
-            UIInput ciudadInputText = (UIInput) uiViewRoot.findComponent("vacanteForm:ciudad");
-            String ciudad = "Ciudad de Mexico";
-            ciudadInputText.setValue(ciudad);
-            ciudadInputText.setSubmittedValue(ciudad);
-
-            facesContext.renderResponse();
-        }
+        Long newCodigoPostal =  (Long) valueChangeEvent.getNewValue();
+        log.info("Nuevo codigo postal: " + newCodigoPostal);
+        UIInput ciudadInputText = (UIInput) uiViewRoot.findComponent("vacanteForm:ciudad");
+        String ciudad = "Ciudad de Mexico";
+        ciudadInputText.setValue(ciudad);
+        ciudadInputText.setSubmittedValue(ciudad);
+        UIInput coloniaInputText = (UIInput) uiViewRoot.findComponent("vacanteForm:coloniaId");
+        //Buscamos la colonia por id con ayuda del bean coloniaHelper
+        Long coloniaId = this.coloniaHelper.getColoniaIdPorCP(newCodigoPostal);
+        coloniaInputText.setValue(coloniaId);
+        coloniaInputText.setSubmittedValue(coloniaId);
+        //Enviamos la respuesta
+        facesContext.renderResponse();
     }
 
     public void ocultarComentario(ActionEvent actionEvent) {
@@ -96,5 +97,13 @@ public class VacanteForm {
 
     public void setComentarioEnviado(boolean comentarioEnviado) {
         this.comentarioEnviado = comentarioEnviado;
+    }
+
+    public ColoniaHelper getColoniaHelper() {
+        return coloniaHelper;
+    }
+
+    public void setColoniaHelper(ColoniaHelper coloniaHelper) {
+        this.coloniaHelper = coloniaHelper;
     }
 }

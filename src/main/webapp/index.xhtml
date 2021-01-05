@@ -48,7 +48,9 @@
                 <td><h:inputText id="codigoPostal" immediate="true"
                                  onchange="this.form.submit()" required="true"
                                  value="#{candidato.codigoPostal}"
-                                 valueChangeListener="#{vacanteForm.codigoPostalListener}" /></td>
+                                 valueChangeListener="#{vacanteForm.codigoPostalListener}" >
+                    <f:convertNumber integerOnly="true" pattern="00000"/>
+                </h:inputText></td>
                 <td><h:message for="codigoPostal" /></td>
             </tr>
             <tr>
@@ -56,9 +58,7 @@
                 <td>
                     <h:selectOneMenu id="coloniaId" required="true" value="#{candidato.coloniaId}">
                         <f:selectItem itemLabel="#{msgs['vacanteForm.seleccione']}" itemValue="" />
-                        <f:selectItem itemLabel="Nápoles" itemValue="1" />
-                        <f:selectItem itemLabel="Polanco" itemValue="2" />
-                        <f:selectItem itemLabel="Del Valle Centro" itemValue="3" />
+                        <f:selectItems value="#{coloniaHelper.selectItems}" />
                     </h:selectOneMenu>
                 </td>
                 <td><h:message for="coloniaId" /></td>
