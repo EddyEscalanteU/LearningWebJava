@@ -21,6 +21,9 @@ public class Candidato {
     private String apellido = "Introduce tu Apellido";
     private int sueldoDeseado;
     private Date fechaNacimiento;
+    private String codigoPostal;
+    private String colonia;
+    private String ciudad;
 
     public Candidato() {
         log.info("Creando el objeto Candidato");
@@ -60,5 +63,29 @@ public class Candidato {
     public void setFechaNacimiento(Date fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
         log.info("Modificando la propiedad fechaNacimiento:" + this.fechaNacimiento);
+    }
+
+    public String getCodigoPostal() {
+        return codigoPostal;
+    }
+
+    public void setCodigoPostal(String codigoPostal) {
+        this.codigoPostal = codigoPostal;
+    }
+
+    public String getColonia() {
+        return colonia;
+    }
+
+    public void setColonia(String colonia) {
+        this.colonia = colonia;
+    }
+
+    public String getCiudad() {
+        return ciudad;
+    }
+
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
     }
 }
