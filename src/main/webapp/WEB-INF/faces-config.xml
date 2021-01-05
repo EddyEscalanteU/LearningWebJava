@@ -15,4 +15,18 @@
         </phase-listener>
     </lifecycle>
 
+    <application>
+        <locale-config>
+            <default-locale>es</default-locale>
+        </locale-config>
+        <!--etiquetas del formulario-->
+        <resource-bundle>
+            <!--No se necesita agregar la extension del archivo-->
+            <base-name>mensajes</base-name>
+            <var>msgs</var>
+        </resource-bundle>
+        <!--cambio de textos de validadores-->
+        <message-bundle>jsf</message-bundle>
+    </application>
+
 </faces-config>
