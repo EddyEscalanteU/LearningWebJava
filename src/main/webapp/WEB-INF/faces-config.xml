@@ -17,7 +17,7 @@
 
     <application>
         <locale-config>
-            <default-locale>es</default-locale>
+            <default-locale>en</default-locale>
         </locale-config>
         <!--etiquetas del formulario-->
         <resource-bundle>
