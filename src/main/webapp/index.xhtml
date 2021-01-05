@@ -5,7 +5,8 @@
   Date: 05/01/2021
   Time: 11:33 a. m.
 -->
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html">
 
@@ -16,12 +17,12 @@
     <h:form>
         <table>
             <tr>
-                <td><h:outputLabel for="nombre" value="Nombre:" /></td>
-                <td><h:inputText id="nombre" value="#{candidato.nombre}" /></td>
-                <td><h:message for="nombre" /></td>
+                <td><h:outputLabel for="nombre" value="Nombre:"/></td>
+                <td><h:inputText id="nombre" value="#{candidato.nombre}"/></td>
+                <td><h:message for="nombre"/></td>
             </tr>
         </table>
-        <h:commandButton value="Enviar" />
+        <h:commandButton action="#{vacanteForm.enviar}" value="Enviar"/>
     </h:form>
 </h:body>
 

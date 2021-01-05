@@ -1,4 +1,4 @@
-package beans;
+package beans.model;
 
 /*
     Created by IntelliJ IDEA.
