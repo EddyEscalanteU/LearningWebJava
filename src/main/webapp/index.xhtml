@@ -7,22 +7,43 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
 
 <h:head>
-    <title>HolaMundo JSF</title>
+    <title>Learning JSF</title>
 </h:head>
 <h:body>
     <h:form>
-        <table>
+
+        <h:messages globalOnly="true" ></h:messages>
+
+        <table border="0">
+            <tbody>
             <tr>
                 <td><h:outputLabel for="nombre" value="Nombre:"/></td>
-                <td><h:inputText id="nombre" value="#{candidato.nombre}"/></td>
-                <td><h:message for="nombre"/></td>
+                <td><h:inputText id="nombre" value="#{candidato.nombre}" required="true"/></td>
+                <td><h:message for="nombre" /></td>
             </tr>
+            <tr>
+                <td><h:outputLabel for="apellido" value="Apellido:" /></td>
+                <td><h:inputText id="apellido" value="#{candidato.apellido}" required="true"/></td>
+                <td><h:message for="apellido" /></td>
+            </tr>
+            <tr>
+                <td><h:outputLabel for="sueldoDeseado" value="Sueldo Deseado:" /></td>
+                <td><h:inputText id="sueldoDeseado" required="true"
+                                 value="#{candidato.sueldoDeseado}">
+                    <f:validateLongRange minimum="1000" maximum="50000"/>
+                </h:inputText></td>
+                <td><h:message for="sueldoDeseado" /></td>
+            </tr>
+            </tbody>
         </table>
+        <br/>
         <h:commandButton action="#{vacanteForm.enviar}" value="Enviar"/>
     </h:form>
+
 </h:body>
 
 </html>
