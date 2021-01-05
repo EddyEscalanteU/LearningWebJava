@@ -5,6 +5,7 @@ package beans.backing;
     Date: 05/01/2021
 */
 
+import beans.helper.FacesContextHelper;
 import beans.model.Candidato;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
@@ -12,6 +13,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.component.UIInput;
 import javax.faces.component.UIViewRoot;
 import javax.faces.context.FacesContext;
+import javax.faces.event.ActionEvent;
 import javax.faces.event.ValueChangeEvent;
 import javax.inject.Inject;
 import org.apache.logging.log4j.LogManager;
@@ -22,6 +24,8 @@ import org.apache.logging.log4j.Logger;
 public class VacanteForm {
 
     Logger log = LogManager.getRootLogger();
+
+    private boolean comentarioEnviado = false;
 
     @Inject
     private Candidato candidato;
@@ -79,4 +83,18 @@ public class VacanteForm {
         }
     }
 
+    public void ocultarComentario(ActionEvent actionEvent) {
+        this.comentarioEnviado = !this.comentarioEnviado;
+        log.info("Mostrando/ocultando el comentario");
+        FacesContext facesContext = FacesContext.getCurrentInstance();
+        FacesContextHelper.limpiarImmediateFacesMessages(facesContext);
+    }
+
+    public boolean isComentarioEnviado() {
+        return comentarioEnviado;
+    }
+
+    public void setComentarioEnviado(boolean comentarioEnviado) {
+        this.comentarioEnviado = comentarioEnviado;
+    }
 }

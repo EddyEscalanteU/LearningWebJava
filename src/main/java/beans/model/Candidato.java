@@ -24,6 +24,7 @@ public class Candidato {
     private String codigoPostal;
     private String colonia;
     private String ciudad;
+    private String comentario = "Escribe tu comentario";
 
     public Candidato() {
         log.info("Creando el objeto Candidato");
@@ -87,5 +88,13 @@ public class Candidato {
 
     public void setCiudad(String ciudad) {
         this.ciudad = ciudad;
+    }
+
+    public String getComentario() {
+        return comentario;
+    }
+
+    public void setComentario(String comentario) {
+        this.comentario = comentario;
     }
 }
