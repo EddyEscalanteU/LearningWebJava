@@ -1,20 +1,26 @@
 package beans.model;
-
 /*
     Created by IntelliJ IDEA.
     User: @EddyEscalanteU
     Date: 05/01/2021
-    Time: 11:33 a. m.
 */
+import javax.inject.Named;
+import javax.enterprise.context.RequestScoped;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
-
-@ManagedBean
 @RequestScoped
+@Named
 public class Candidato {
 
-    private String nombre = "Introduce tu nombre";
+    Logger log = LogManager.getRootLogger();
+
+    private String nombre;
+
+    public Candidato() {
+        log.info("Creando el objeto Candidato");
+        this.setNombre("Introduce tu nombre");
+    }
 
     public String getNombre() {
         return nombre;
@@ -22,6 +28,6 @@ public class Candidato {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+        log.info("Modificando la propiedad nombre:" + this.nombre);
     }
-
 }
