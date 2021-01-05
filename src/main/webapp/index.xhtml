@@ -52,10 +52,16 @@
                 <td><h:message for="codigoPostal" /></td>
             </tr>
             <tr>
-                <td><h:outputLabel for="colonia" value="#{msgs['vacanteForm.colonia']}" /></td>
-                <td><h:inputText id="colonia" required="true"
-                                 value="#{candidato.colonia}" /></td>
-                <td><h:message for="colonia" /></td>
+                <td><h:outputLabel for="coloniaId" value="#{msgs['vacanteForm.coloniaId']}" /></td>
+                <td>
+                    <h:selectOneMenu id="coloniaId" required="true" value="#{candidato.coloniaId}">
+                        <f:selectItem itemLabel="#{msgs['vacanteForm.seleccione']}" itemValue="" />
+                        <f:selectItem itemLabel="Nápoles" itemValue="1" />
+                        <f:selectItem itemLabel="Polanco" itemValue="2" />
+                        <f:selectItem itemLabel="Del Valle Centro" itemValue="3" />
+                    </h:selectOneMenu>
+                </td>
+                <td><h:message for="coloniaId" /></td>
             </tr>
             <tr>
                 <td><h:outputLabel for="ciudad" value="#{msgs['vacanteForm.ciudad']}" /></td>

@@ -69,10 +69,10 @@ public class VacanteForm {
         if ("1010".equals(newCodigoPostal)) {
             log.info("Modificamos los valores de colonia y ciudad dinamicamente con ValueChangeListener");
             //Utilizamos el nombre del form de index.xhtml para encontrar el componente
-            UIInput coloniaInputText = (UIInput) uiViewRoot.findComponent("vacanteForm:colonia");
-            String colonia = "Nápoles";
-            coloniaInputText.setValue(colonia);
-            coloniaInputText.setSubmittedValue(colonia);
+            UIInput coloniaInputText = (UIInput) uiViewRoot.findComponent("vacanteForm:coloniaId");
+            Long coloniaId = 1L;
+            coloniaInputText.setValue(coloniaId);
+            coloniaInputText.setSubmittedValue(Long.toString(coloniaId));
 
             UIInput ciudadInputText = (UIInput) uiViewRoot.findComponent("vacanteForm:ciudad");
             String ciudad = "Ciudad de Mexico";

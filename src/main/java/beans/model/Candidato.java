@@ -16,15 +16,14 @@ import org.apache.logging.log4j.Logger;
 public class Candidato {
 
     Logger log = LogManager.getRootLogger();
-
     private String nombre = "Introduce tu nombre";
     private String apellido = "Introduce tu Apellido";
     private int sueldoDeseado;
     private Date fechaNacimiento;
     private String codigoPostal;
-    private String colonia;
     private String ciudad;
     private String comentario = "Escribe tu comentario";
+    private long coloniaId;
 
     public Candidato() {
         log.info("Creando el objeto Candidato");
@@ -74,14 +73,6 @@ public class Candidato {
         this.codigoPostal = codigoPostal;
     }
 
-    public String getColonia() {
-        return colonia;
-    }
-
-    public void setColonia(String colonia) {
-        this.colonia = colonia;
-    }
-
     public String getCiudad() {
         return ciudad;
     }
@@ -96,5 +87,13 @@ public class Candidato {
 
     public void setComentario(String comentario) {
         this.comentario = comentario;
+    }
+
+    public long getColoniaId() {
+        return coloniaId;
+    }
+
+    public void setColoniaId(long coloniaId) {
+        this.coloniaId = coloniaId;
     }
 }
