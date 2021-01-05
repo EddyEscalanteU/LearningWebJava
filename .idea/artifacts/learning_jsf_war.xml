@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="learning-jsf:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>learning-jsf</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="learning-jsf.war">
+      <element id="artifact" artifact-name="learning-jsf:war exploded" />
+    </root>
+  </artifact>
+</component>
