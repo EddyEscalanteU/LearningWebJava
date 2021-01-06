@@ -1,4 +1,5 @@
 package beans.ciclovida;
+
 /*
     Created by IntelliJ IDEA.
     User: @EddyEscalanteU
@@ -7,6 +8,7 @@ package beans.ciclovida;
 
 import javax.faces.event.PhaseEvent;
 import javax.faces.event.PhaseId;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

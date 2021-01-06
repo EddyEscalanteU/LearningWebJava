@@ -9,6 +9,7 @@ package beans.backing;
 import beans.helper.ColoniaHelper;
 import beans.helper.FacesContextHelper;
 import beans.model.Candidato;
+
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
@@ -18,6 +19,7 @@ import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 import javax.faces.event.ValueChangeEvent;
 import javax.inject.Inject;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -69,7 +71,7 @@ public class VacanteForm {
     public void codigoPostalListener(ValueChangeEvent valueChangeEvent) {
         FacesContext facesContext = FacesContext.getCurrentInstance();
         UIViewRoot uiViewRoot = facesContext.getViewRoot();
-        Long newCodigoPostal =  (Long) valueChangeEvent.getNewValue();
+        Long newCodigoPostal = (Long) valueChangeEvent.getNewValue();
         log.info("Nuevo codigo postal: " + newCodigoPostal);
         UIInput ciudadInputText = (UIInput) uiViewRoot.findComponent("vacanteForm:ciudad");
         String ciudad = "Ciudad de Mexico";

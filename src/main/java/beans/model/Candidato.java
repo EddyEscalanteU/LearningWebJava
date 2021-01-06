@@ -8,6 +8,7 @@ package beans.model;
 import java.util.Date;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
