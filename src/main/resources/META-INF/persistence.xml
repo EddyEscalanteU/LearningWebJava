@@ -17,15 +17,15 @@
             <property name="hibernate.hbm2ddl.auto" value="none"/>
 
             <!--            autogenerate-->
-            <property name="hibernate.show_sql" value="false"/>
-            <property name="toplink.jdbc.url" value="jdbc:postgresql://localhost:5432/learning-jsf"/>
-            <property name="toplink.jdbc.driver" value="org.postgresql.Driver"/>
-            <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/learning-jsf"/>
-            <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
-            <property name="openjpa.ConnectionURL" value="jdbc:postgresql://localhost:5432/learning-jsf"/>
-            <property name="openjpa.ConnectionDriverName" value="org.postgresql.Driver"/>
-            <property name="eclipselink.jdbc.url" value="jdbc:postgresql://localhost:5432/learning-jsf"/>
-            <property name="eclipselink.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="hibernate.show_sql" value="true"/>
+<!--            <property name="toplink.jdbc.url" value="jdbc:postgresql://localhost:5432/learning-jsf"/>-->
+<!--            <property name="toplink.jdbc.driver" value="org.postgresql.Driver"/>-->
+<!--            <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/learning-jsf"/>-->
+<!--            <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>-->
+<!--            <property name="openjpa.ConnectionURL" value="jdbc:postgresql://localhost:5432/learning-jsf"/>-->
+<!--            <property name="openjpa.ConnectionDriverName" value="org.postgresql.Driver"/>-->
+<!--            <property name="eclipselink.jdbc.url" value="jdbc:postgresql://localhost:5432/learning-jsf"/>-->
+<!--            <property name="eclipselink.jdbc.driver" value="org.postgresql.Driver"/>-->
             <!--            autogenerate-->
         </properties>
     </persistence-unit>
